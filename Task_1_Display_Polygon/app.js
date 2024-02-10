@@ -3,7 +3,9 @@ fetch("polygon.json")
   .then((data) => {
     console.log("Coordinates:", data.polygon);
 
-    const polygonCoordinates = data.polygon.map((coordinate) => ol.proj.fromLonLat(coordinate));
+    const polygonCoordinates = data.polygon.map((coordinate) =>
+      ol.proj.fromLonLat(coordinate)
+    );
 
     // Create a Polygon
     const polygon = new ol.Feature({
@@ -33,9 +35,12 @@ fetch("polygon.json")
       ],
       view: new ol.View({
         center: ol.extent.getCenter(polygon.getGeometry().getExtent()),
-        zoom: 10, 
+        zoom: 8,
       }),
     });
+
+    // Fit the view to the extent of the polygon
+    map.getView().fit(polygon.getGeometry().getExtent(), map.getSize());
 
     console.log("Map:", map);
   })
