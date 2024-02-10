@@ -5,16 +5,19 @@ app = Flask(__name__)
 
 @app.route('/detect_unauthorized_sales', methods=['POST'])
 def detect_unauthorized_sales():
-    data = request.get_json()
+    try:
+        data = request.get_json()
 
-    productListings = data.get('productListings', [])
-    salesTransactions = data.get('salesTransactions', [])
+        productListings = data.get('productListings', [])
+        salesTransactions = data.get('salesTransactions', [])
 
-    unauthorized_sales = identify_unauthorized_sales(productListings, salesTransactions)
-    print(unauthorized_sales)
+        unauthorized_sales = identify_unauthorized_sales(productListings, salesTransactions)
+        print(unauthorized_sales)
 
-    response = {'unauthorizedSales': unauthorized_sales}
-    return jsonify(response), 200
+        response = {'unauthorizedSales': unauthorized_sales}
+        return jsonify(response), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
 
 def identify_unauthorized_sales(productListings, salesTransactions):
     unauthorized_sales = []
