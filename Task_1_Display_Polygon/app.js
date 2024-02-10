@@ -9,6 +9,7 @@ fetch("polygon.json")
     });
 
     console.log("Polygon Feature:", polygon);
+    console.log("Polygon Extent:", polygon.getGeometry().getExtent());
 
     // Create a new source and layer
     const vectorSource = new ol.source.Vector({
@@ -30,7 +31,7 @@ fetch("polygon.json")
       ],
       view: new ol.View({
         center: ol.extent.getCenter(polygon.getGeometry().getExtent()),
-        zoom: 4,
+        zoom: 10, 
       }),
     });
 
