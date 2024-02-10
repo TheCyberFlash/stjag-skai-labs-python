@@ -7,7 +7,7 @@ fetch("polygon.json")
       geometry: new ol.geom.Polygon(data.coordinates),
     });
 
-    //Create a new source and layer
+    // Create a new source and layer
     const vectorSource = new ol.source.Vector({
       features: [polygon],
     });
@@ -26,7 +26,7 @@ fetch("polygon.json")
         vectorLayer,
       ],
       view: new ol.View({
-        center: ol.extent.getCenter(polygonFeature.getGeometry().getExtent()),
+        center: ol.extent.getCenter(polygon.getGeometry().getExtent()),
         zoom: 4,
       }),
     });
@@ -34,7 +34,3 @@ fetch("polygon.json")
     console.log(polygon);
   })
   .catch((error) => console.error("Error:", error));
-
-// Create a Polygon
-// Create a map
-// Bon Appétit!
