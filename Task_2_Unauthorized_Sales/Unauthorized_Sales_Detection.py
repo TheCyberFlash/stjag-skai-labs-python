@@ -7,6 +7,9 @@ app = Flask(__name__)
 def detect_unauthorized_sales():
     data = request.get_json()
     print(data)
+    return identify_unauthorized_sales(data)
+
+def identify_unauthorized_sales(data):
     return jsonify({"message": "Hello, World!"})
 
 if __name__ == '__main__':
