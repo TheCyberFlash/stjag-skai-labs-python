@@ -30,7 +30,7 @@ def calculate_interviews(start_times, end_times):
             max_interviews += 1
             previous_end_time = end
         
-    return 0
+    return max_interviews
 
 if __name__ == '__main__':
     app.run(debug=True)
