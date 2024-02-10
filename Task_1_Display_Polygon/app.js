@@ -1,11 +1,14 @@
-// Fetch JSON polygon.json
 fetch("polygon.json")
   .then((response) => response.json())
   .then((data) => {
+    console.log("Coordinates:", data.polygon);
+
     // Create a Polygon
     const polygon = new ol.Feature({
-      geometry: new ol.geom.Polygon(data.coordinates),
+      geometry: new ol.geom.Polygon([data.polygon]),
     });
+
+    console.log("Polygon Feature:", polygon);
 
     // Create a new source and layer
     const vectorSource = new ol.source.Vector({
@@ -31,6 +34,6 @@ fetch("polygon.json")
       }),
     });
 
-    console.log(polygon);
+    console.log("Map:", map);
   })
   .catch((error) => console.error("Error:", error));
