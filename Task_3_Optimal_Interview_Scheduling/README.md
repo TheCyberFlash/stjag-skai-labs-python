@@ -62,3 +62,11 @@ If an error occurs during processing, the API returns a JSON object with an erro
 
 - If any issues arise, ensure that the input JSON data follows the specified format.
 - The API follows RESTful principles and responds with appropriate HTTP status codes (e.g., 200 OK for successful requests, 400 Bad Request for invalid input).
+- Try it by sending a POST request to: https://thecyberflash.pythonanywhere.com/interview_schedule
+
+```json
+{
+  "start_times": [10, 20, 30, 40, 50, 55, 65, 75],
+  "end_times": [15, 25, 35, 45, 55, 65, 70, 80]
+}
+```
