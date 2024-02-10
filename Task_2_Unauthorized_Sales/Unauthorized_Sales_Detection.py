@@ -13,7 +13,8 @@ def detect_unauthorized_sales():
     unauthorized_sales = identify_unauthorized_sales(productListings, salesTransactions)
     print(unauthorized_sales)
 
-    return identify_unauthorized_sales(productListings, salesTransactions)
+    response = {'unauthorizedSales': unauthorized_sales}
+    return jsonify(response), 200
 
 def identify_unauthorized_sales(productListings, salesTransactions):
     unauthorized_sales = []
@@ -26,7 +27,7 @@ def identify_unauthorized_sales(productListings, salesTransactions):
 
         if product_id not in authorized_sellers or seller_id != authorized_sellers[product_id]:
             unauthorized_sales.append(transaction)
-            
+
     return unauthorized_sales
 
 if __name__ == '__main__':
