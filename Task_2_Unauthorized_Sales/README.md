@@ -64,3 +64,11 @@ If an error occurs during processing, the API returns a JSON object with an erro
 
 - If any issues arise, ensure that the input JSON data follows the specified format.
 - The API follows RESTful principles and responds with appropriate HTTP status codes (e.g., 200 OK for successful requests, 400 Bad Request for invalid input).
+- Try it by sending a POST request to: https://thecyberflash.pythonanywhere.com/detect_unauthorized_sales
+
+```json
+{
+  "productListings": [{"productID": "123", "authorizedSellerID": "A1"}],
+  "salesTransactions": [{"productID": "123", "sellerID": "B2"}]
+}
+```
