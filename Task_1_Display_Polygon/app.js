@@ -3,9 +3,11 @@ fetch("polygon.json")
   .then((data) => {
     console.log("Coordinates:", data.polygon);
 
+    const polygonCoordinates = data.polygon.map((coordinate) => ol.proj.fromLonLat(coordinate));
+
     // Create a Polygon
     const polygon = new ol.Feature({
-      geometry: new ol.geom.Polygon([data.polygon]),
+      geometry: new ol.geom.Polygon([polygonCoordinates]),
     });
 
     console.log("Polygon Feature:", polygon);
