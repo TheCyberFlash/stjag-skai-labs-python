@@ -1,5 +1,4 @@
 ---
-***
 
 # Task One - Display a Polygon on a Map
 
@@ -42,4 +41,3 @@ Assume the polygon.json file contains valid geo-coordinates in the required form
 Try it here [Github Page](https://thecyberflash.github.io/stjag-skai-labs-python/) 
 
 ---
-***
