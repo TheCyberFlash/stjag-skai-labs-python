@@ -1,4 +1,4 @@
-# [Github Page](https://thecyberflash.github.io/stjag-skai-labs-python/){:target="_blank"}
+# [Github Page](https://thecyberflash.github.io/stjag-skai-labs-python/)
 
 ## Display Polygon on a Map
 
