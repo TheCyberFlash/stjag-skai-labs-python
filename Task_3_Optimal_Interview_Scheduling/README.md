@@ -26,7 +26,7 @@ This Python API provides an endpoint for calculating the maximum number of non-o
    - Execute the following command to run the API:
 
      ```bash
-     python Optimal_Job_Interview_Scheduling.py
+     python Optimal_Interview_Scheduling.py
      ```
 
 4. **Make POST Requests:**
