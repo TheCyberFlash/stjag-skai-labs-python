@@ -6,7 +6,10 @@ app = Flask(__name__)
 @app.route('/interview_schedule', methods=['POST'])
 def calculate_max_interviews():
     data = request.get_json()
-    print(data)
+    start_times = data.get('start_times', [])
+    end_times = data.get('end_times', [])
+    print(start_times)
+    print(end_times)
     return jsonify({"message": "Hello, World!"})
 
 if __name__ == '__main__':
